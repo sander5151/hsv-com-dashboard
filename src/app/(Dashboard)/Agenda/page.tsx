@@ -8,11 +8,11 @@ export default async function Home() {
     const session = await getServerAuthSession();
     const UserId = session?.user.id
     const user = await api.user.getUser.query(UserId!);
-    const currentDate = moment().format('MMMM');
+    const currentMonth = moment().format('MMMM');
 
     return (
         <>
-            <Calendar month={currentDate} />
+            <Calendar />
         </>
     );
 }
