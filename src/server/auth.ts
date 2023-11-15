@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import {
   getServerSession,
@@ -5,7 +6,6 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
-
 import { env } from "~/env.mjs";
 import { db } from "~/server/db";
 
@@ -19,15 +19,8 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
-      // ...other properties
-      // role: UserRole;
     } & DefaultSession["user"];
   }
-
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
 }
 
 /**
