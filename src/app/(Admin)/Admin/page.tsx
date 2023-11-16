@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import Cards from "~/app/Components/Dashboard/Admin/Cards";
+import Cards from "~/Components/Dashboard/Admin/Cards";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 

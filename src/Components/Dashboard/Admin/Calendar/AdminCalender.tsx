@@ -17,7 +17,7 @@ export default function Calendar({
     events: Event[]
 }) {
     return (
-        <div className="relative w-full h-screen bg-white border border-gray-200 rounded-lg shadow ">
+        <div className="ml-64 relative w-full h-screen bg-white border border-gray-200 rounded-lg shadow overflow-hidden">
             <AdminCalendarMonth events={events} />
         </div>
     )

@@ -1,8 +1,9 @@
 import "~/styles/globals.css";
-import { headers } from "next/headers";
+
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { getServerAuthSession } from "~/server/auth";
+import { headers } from "next/dist/client/components/headers";
 
 export const metadata = {
   title: "HSV Commissie Dashboard",
@@ -11,12 +12,12 @@ export const metadata = {
 };
 
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerAuthSession();
+
 
   return (
     <html lang="en">

@@ -81,6 +81,7 @@ model Event {
     id          Int     @id @default(autoincrement())
     title       String
     start       String
-    allDay      Boolean @default(false)
+    allDay      Boolean @default(true)
     description String
+    time        String?
 }

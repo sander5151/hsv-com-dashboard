@@ -26,7 +26,12 @@ export default function Header() {
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <div>
-                            <Image className="h-12 w-auto" src="/HSV_Logo.png" alt="" fill />
+                            <Image
+                                height={48}
+                                width={48}
+                                src="/HSV_Logo.png"
+                                alt=""
+                            />
                         </div>
                     </a>
                 </div>
@@ -61,10 +66,10 @@ export default function Header() {
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">HSV</span>
                             <Image
-                                className="h-8 w-auto"
+                                height={48}
+                                width={48}
                                 src="/HSV_Logo.png"
                                 alt=""
-                                fill
                             />
                         </a>
                         <button

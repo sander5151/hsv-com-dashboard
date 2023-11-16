@@ -1,4 +1,4 @@
-import UserProfile from "~/app/Components/Dashboard/Profile/UserProfile";
+import UserProfile from "~/Components/Dashboard/Profile/UserProfile";
 import { getServerAuthSession } from "~/server/auth";
 import { api } from "~/trpc/server";
 

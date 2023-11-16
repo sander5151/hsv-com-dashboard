@@ -27,7 +27,7 @@ export default function CalendarMonth({
 
     const [eventTitleToShow, setEventTitleToShow] = useState<string>()
     const [eventDescriptionToShow, setEventDescriptionToShow] = useState<string>()
-
+    const [eventTime, setEventTime] = useState<string>()
     useEffect(() => setAllEvents(events), [events])
 
 
@@ -38,6 +38,7 @@ export default function CalendarMonth({
         })
         setEventTitleToShow(eventClickedTotal?.title)
         setEventDescriptionToShow(eventClickedTotal?.description)
+        setEventTime(eventClickedTotal?.time)
         setShowEventModal(true)
     }
 
@@ -48,8 +49,8 @@ export default function CalendarMonth({
 
     return (
         <>
-            <main className="items-center p-8">
-                <div className="w-auto h-screen">
+            <main className="items-center p-8 ">
+                <div className="w-auto h-screen overflow-scroll">
                     <FullCalendar
                         plugins={[
                             dayGridPlugin,
@@ -59,7 +60,7 @@ export default function CalendarMonth({
                         headerToolbar={{
                             left: 'prev,next today',
                             center: 'title',
-                            right: 'resourceTimelineWook, dayGridMonth,timeGridWeek'
+                            right: 'dayGridMonth,timeGridWeek'
                         }}
                         events={allEvents as EventSourceInput}
                         nowIndicator={true}
@@ -111,6 +112,10 @@ export default function CalendarMonth({
                                                         <p className='text-sm'>Beschrijving</p>
                                                         <p className="text-sm text-gray-500">
                                                             {eventDescriptionToShow}
+                                                        </p>
+                                                        <p className='text-sm mt-2'>Tijdstip</p>
+                                                        <p className="text-sm text-gray-500">
+                                                            {eventTime}
                                                         </p>
                                                     </div>
                                                 </div>

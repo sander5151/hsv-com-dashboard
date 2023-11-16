@@ -3,24 +3,21 @@ import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import { getServerAuthSession } from "~/server/auth";
-import { DashboardHeader } from "~/app/Components/Dashboard/DashboardComponents"
+import { DashboardHeader } from "~/Components/Dashboard/DashboardComponents"
 import { redirect } from "next/navigation";
 
 
-export default async function dashboardLayout({
+export default function DashboardLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const session = await getServerAuthSession();
-    { !session ? redirect('/') : "" }
-
     return (
-        <body>
+        <section>
             <DashboardHeader />
             <TRPCReactProvider headers={headers()}>
                 {children}
             </TRPCReactProvider>
-        </body>
+        </section>
     );
 }
