@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import Image from "next/image";
 
@@ -14,7 +13,10 @@ export default function Hero({
 }) {
     return (
         <div className="relative isolate overflow-hidden bg-orange-900 py-24 sm:py-32 h-screen">
-            <Image src="/Zernike-scaled.jpg" alt="" className="absolute inset-0 -z-10 object-cover object-right md:object-center scale-110 blur grayscale" fill />
+            <div>
+                <Image src="/Zernike-scaled.jpg" alt="" className="absolute inset-0 -z-10 object-cover object-right md:object-center scale-110 blur grayscale" fill />
+            </div>
+
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0">
                     <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Welkom op het HSV Commissie Dashboard, <br /> {name} </h2>

@@ -16,14 +16,11 @@ export default async function dashboardLayout({
     { !session ? redirect('/') : "" }
 
     return (
-
-        <html lang="en">
-            <body className="bg-slate-200">
-                <DashboardHeader />
-                <TRPCReactProvider headers={headers()}>
-                    {children}
-                </TRPCReactProvider>
-            </body>
-        </html>
+        <body>
+            <DashboardHeader />
+            <TRPCReactProvider headers={headers()}>
+                {children}
+            </TRPCReactProvider>
+        </body>
     );
 }

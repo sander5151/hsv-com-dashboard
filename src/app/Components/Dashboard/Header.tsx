@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from 'react'
@@ -10,7 +9,7 @@ import {
     UserIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
-
+import Image from 'next/image';
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -20,7 +19,7 @@ export default function Header() {
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">HSV</span>
-                        <img className="h-12 w-auto" src="/HSV_Logo.png" alt="" />
+                        <Image src="/HSV_Logo.png" alt="" height={48} width={48} />
                     </a>
                 </div>
                 <div className="flex lg:hidden">
@@ -63,10 +62,12 @@ export default function Header() {
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">HSV</span>
-                            <img
-                                className="h-8 w-auto"
+                            <Image
+                                height={32}
+                                width={32}
                                 src="/HSV_Logo.png"
                                 alt=""
+                                fill
                             />
                         </a>
                         <button

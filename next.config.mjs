@@ -8,7 +8,10 @@ await import("./src/env.mjs");
 const config = {
     images: {
         domains: ["cdn.discordapp.com"]
-    }
+    },
+    // experimental: {
+    //     serverActions: true,
+    // }
 };
 
 export default config;

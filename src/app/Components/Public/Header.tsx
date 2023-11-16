@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Fragment, useState } from 'react'
@@ -26,7 +25,9 @@ export default function Header() {
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
-                        <img className="h-12 w-auto" src="/HSV_Logo.png" alt="" />
+                        <div>
+                            <Image className="h-12 w-auto" src="/HSV_Logo.png" alt="" fill />
+                        </div>
                     </a>
                 </div>
                 <div className="flex lg:hidden">
@@ -59,10 +60,11 @@ export default function Header() {
                     <div className="flex items-center justify-between">
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">HSV</span>
-                            <img
+                            <Image
                                 className="h-8 w-auto"
                                 src="/HSV_Logo.png"
                                 alt=""
+                                fill
                             />
                         </a>
                         <button

@@ -1,10 +1,10 @@
 import "~/styles/globals.css";
 import { headers } from "next/headers";
+
 import { TRPCReactProvider } from "~/trpc/react";
 import { getServerAuthSession } from "~/server/auth";
-import { DashboardHeader } from "~/app/Components/Dashboard/DashboardComponents"
 import { redirect } from "next/navigation";
-import { Sidebar } from "../Components/Dashboard/Admin/AdminComponents";
+import { Sidebar } from "~/app/Components/Dashboard/Admin/AdminComponents";
 import { api } from "~/trpc/server";
 
 
@@ -22,9 +22,8 @@ export default async function adminLayout({
 
     return (
         <body>
-
+            <Sidebar />
             <TRPCReactProvider headers={headers()}>
-                <Sidebar />
                 {children}
             </TRPCReactProvider>
         </body>
